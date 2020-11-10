@@ -1,0 +1,36 @@
+html, body, #root {
+  height: 100%;
+}
+
+.app {
+  min-height: 100%;
+  width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-main {
+  flex-grow: 1;
+}
+
+.recipe {
+  height: 500px;
+  background-color: beige;
+  outline: 5px solid gray;
+  outline-offset: -5px;
+}
+
+header {
+  background-color: darkolivegreen;
+  flex-shrink: 0;
+}
+
+main {
+  background-color: cadetblue;
+}
+
+footer {
+  background-color: rosybrown;
+  flex-shrink: 0;
+}
