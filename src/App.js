@@ -10,9 +10,7 @@ function App() {
       <header>header</header>
       <main className="page-main">
         <Switch>
-          <Route path="/recipes/:id">
-            <RecipeAPI/>
-          </Route>
+          <Route path="/recipes/:id" render={ (props) => <RecipeAPI { ...props } /> } />
           <Route path="/">
             <RecipesAPI/>
           </Route>

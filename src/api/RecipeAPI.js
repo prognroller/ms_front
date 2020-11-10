@@ -1,10 +1,10 @@
 import React from "react";
 import gql from "graphql-tag/src";
 import {useQuery} from "@apollo/client";
-import Recipe from "../components/Recipe";
+import RecipeFull from "../components/RecipeFull";
 
 const GET_RECIPES = gql`
-  query getRecipe($id: Int!){
+  query getRecipe($id: String!){
     recipe(id: $id) {
       title
       description
@@ -22,22 +22,14 @@ const GET_RECIPES = gql`
   }
 `
 
-export default function RecipeAPI() {
+export default function RecipeAPI({match}) {
   const {loading, data} = useQuery(GET_RECIPES, {
     variables: {
-      limit: 100,
-      skip: 0
+      id: match.params.id,
     }
   })
 
   return (
-    loading
-      ? 'loading...'
-      :
-      <section className="recipes">
-        {
-          data.recipeCollection.items.map((props, idx) => <Recipe key={idx}  { ...props } /> )
-        }
-      </section>
+    loading ? 'loading...' : <RecipeFull { ...data.recipe } />
   )
 }
