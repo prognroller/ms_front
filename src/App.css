@@ -28,6 +28,10 @@ html, body, #root {
   margin-bottom: 20px;
 }
 
+.recipe-tags {
+  list-style: none;
+}
+
 header {
   background-color: darkolivegreen;
   flex-shrink: 0;

@@ -13,6 +13,9 @@ const GET_RECIPES = gql`
         description
         url
       }
+      chef {
+        name
+      }
       tagsCollection {
         items {
           name
