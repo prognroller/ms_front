@@ -25,6 +25,7 @@ html, body, #root {
   background-color: beige;
   outline: 5px solid gray;
   outline-offset: -5px;
+  margin-bottom: 20px;
 }
 
 header {
